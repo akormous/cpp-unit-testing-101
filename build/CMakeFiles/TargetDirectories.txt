@@ -1,3 +1,0 @@
-/home/akshatchauhan/example/cpp-unit-testing-101/build/CMakeFiles/executeTests.dir
-/home/akshatchauhan/example/cpp-unit-testing-101/build/CMakeFiles/edit_cache.dir
-/home/akshatchauhan/example/cpp-unit-testing-101/build/CMakeFiles/rebuild_cache.dir
