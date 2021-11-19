@@ -57,4 +57,42 @@ For that reason, unit test should be the most abundant tests.
 <details>
     <summary>Assertions</summary>
 
+- googletest assertions are [macros](https://docs.microsoft.com/en-us/cpp/preprocessor/macros-c-cpp?view=msvc-170#:~:text=Identifiers%20that%20represent%20statements%20or%20expressions%20are%20called%20macros.) that resemble function calls
+- You test a class or function by making assertions about its behavior
+- When an assertion fails, googletest prints the assertion's source file and line number location, along with a failure message
+- You mal also supply a custom failure message which will be appended to googletest's message
+- Assertions come in pairs that test the same thing but have different effects on the current function
+- `ASSERT_*` versions generate fatal failures when they fail, and **abort the current function**
+- `EXPECT_*` versions generate non-fatal failures, which don't abort the current function
+- To provide a custome failure message, simply stream it into the macro using the `<<` operator or a sequence of such operators
+- Example
+
+```cpp
+
+ASSERT_EQ(x.size(), y.size()) << "Vectors x and y are of unequal length";
+
+for (int i = 0; i < x.size(); ++i) {
+    EXPECT_EQ(x[i], y[i]) << "Vectors x and y differ at index " << i;
+}
+
+```
+
+</details>
+
+<details>
+    <summary>Simple Tests</summary>
+
+- Use the `TEST()` macro to define and name a test function. These are ordinary C++ functions that don't return a value
+- In this function, use the various googletest assertions to check values
+- The test's result is determined by the assertions; if any assertion in the test fails (either fatally or non-fatally), or if the test crashes, the entire test fails. Otherwise, it succeeds
+
+```cpp
+
+TEST(TestSuiteName, TestName) {
+    /*
+    test body - a bunch of assertions and stuff
+    */
+}
+
+```
 </details>
