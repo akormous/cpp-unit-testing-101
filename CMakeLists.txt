@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 cmake_minimum_required(VERSION 3.14)
 set(PROJECT_NAME_STR CPPUnitTesting)
 project(${PROJECT_NAME_STR} C CXX)
@@ -28,14 +27,3 @@ target_link_libraries(
 
 include(GoogleTest)
 gtest_discover_tests(hello_test)
-=======
-cmake_minimum_required(VERSION 3.14)
- 
-# Locate GTest
-find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
- 
-# Link runTests with what we want to test and the GTest and pthread library
-add_executable(executeTests sqrt_tests.cpp)
-target_link_libraries(executeTests ${GTEST_LIBRARIES} pthread)
->>>>>>> 44984020741bac0a34fd8e4e95cef8b23973edd3

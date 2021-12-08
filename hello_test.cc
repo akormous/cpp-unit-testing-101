@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-#include <gtest/gtest.h>
-
-// Demonstrate some basic assertions.
-TEST(HelloTest, BasicAssertions) {
-  // Expect two strings not to be equal.
-  EXPECT_STRNE("hello", "world");
-  // Expect equality.
-  EXPECT_EQ(7 * 6, 42);
-}
-=======
 #include "sqrt.cpp"
 #include <gtest/gtest.h>
  
@@ -31,4 +20,3 @@ int main(int argc, char **argv)
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
     }
->>>>>>> 44984020741bac0a34fd8e4e95cef8b23973edd3
